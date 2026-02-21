@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta name="description" content="Zvanični sajt učiteljice Branke - edukacija, aktivnosti i informacije za roditelje i učenike.">
+<meta property="og:title" content="Učiteljica Branka">
+<meta property="og:description" content="Edukacija, aktivnosti i informacije.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Учитељица Бранка</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img loading="lazy" src="assets/logo.svg" alt="Учитељица Бранка" class="logo">
+        <div>
+          <h1>Учитељица Бранка</h1>
+          <p class="tagline">Идеје, материјали и ђачки радови за 1. – 4. разред</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="">Почетна</a>
+        <a href="about.html">О мени</a>
+        <a href="posts/index.html">Материјали</a>
+        <a href="gallery.html">Галерија</a>
+        <a href="contact.html">Контакт</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Отвори мени">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Добродошли!</h2>
+      <p>Овде делим једноставне, практичне идеје за наставу, листиће, игре и активности за ученике од првог до четвртог разреда — све на ћирилици.</p>
+      <a class="btn" href="posts/index.html">Погледај материјале</a>
+    </section>
+
+    <section class="latest">
+      <h3>Најновије</h3>
+      <div class="cards">
+        <article class="card">
+          <img loading="lazy" src="assets/photo1.svg" alt="Радови ученика">
+          <h4><a href="posts/post1.html">Креативни радови: Пролећна природа</a></h4>
+          <p>Примери ђачких радова и идеје како их унаприједити у настави.</p>
+        </article>
+
+        <article class="card">
+          <img loading="lazy" src="assets/photo2.svg" alt="Задаци">
+          <h4><a href="posts/post2.html">Задаци из математике за 2. разред</a></h4>
+          <p>Листа листића и игара за проверу основних операција.</p>
+        </article>
+
+        <article class="card">
+          <img loading="lazy" src="assets/photo3.svg" alt="Игре">
+          <h4><a href="posts/post3.html">Игре за развој пажње</a></h4>
+          <p>Кратке и забавне активности које се лако спроводе у учионици.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h4>Претрага</h4>
+        <input type="search" placeholder="Претражи..." id="site-search">
+      </div>
+
+      <div class="widget">
+        <h4>Категорије</h4>
+        <ul>
+          <li><a href="posts/index.html#grade1">1. разред</a></li>
+          <li><a href="posts/index.html#grade2">2. разред</a></li>
+          <li><a href="posts/index.html#grade3">3. разред</a></li>
+          <li><a href="posts/index.html#grade4">4. разред</a></li>
+        </ul>
+      </div>
+
+      <div class="widget about-mini">
+        <h4>О мени</h4>
+        <img loading="lazy" src="assets/logo.svg" alt="Учитељица Бранка" class="about-pic">
+        <p>Ја сам Бранка, учитељица која воли креативан приступ настави. Добродошли у мој школски свет!</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Учитељица Бранка &copy; 2025</p>
+      <p><a href="contact.html">Контакт</a> • <a href="privacy.html">Политика приватности</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+<script id="active-nav-script">
+document.querySelectorAll('nav a').forEach(link => {
+    if(link.href === window.location.href){
+        link.classList.add('active');
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="150">
+<rect width="300" height="150" fill="#E8F1FA"/>
+<rect x="20" y="30" width="260" height="90" fill="#FFF6B0" stroke="#74C0FC" stroke-width="4"/>
+<text x="150" y="85" text-anchor="middle" fill="#74C0FC" font-size="20" font-family="sans-serif">Учионица</text>
+</svg>
