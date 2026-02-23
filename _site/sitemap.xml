@@ -1,0 +1,31 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>https://uciteljicabranka.rs/</loc>
+</url>
+
+<url>
+<loc>https://uciteljicabranka.rs/about/</loc>
+</url>
+
+<url>
+<loc>https://uciteljicabranka.rs/contact/</loc>
+</url>
+
+<url>
+<loc>https://uciteljicabranka.rs/gallery/</loc>
+</url>
+
+<url>
+<loc>https://uciteljicabranka.rs/posts/</loc>
+</url>
+
+
+<url>
+<loc>https://uciteljicabranka.rs/posts/test/</loc>
+</url>
+
+
+</urlset>

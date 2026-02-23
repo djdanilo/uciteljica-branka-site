@@ -1,0 +1,67 @@
+---
+layout: layout.njk
+permalink: "/"
+title: "Учитељица Бранка"
+description: "Идеје, материјали и ђачки радови за 1–4 разред."
+---
+
+<body>
+
+
+<main class="container">
+<section class="hero">
+<h2>Добродошли!</h2>
+<p>Овде делим једноставне, практичне идеје за наставу, листиће, игре и активности за ученике од првог до четвртог разреда — све на ћирилици.</p>
+<a class="btn" href="/posts/">Погледај материјале</a>
+</section>
+
+<section class="latest">
+<h3>Најновије</h3>
+<div class="cards">
+
+{% for post in collections.posts | reverse | slice(0,3) %}
+<article class="card">
+    {% if post.data.featured_image %}
+        <img loading="lazy" src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
+    {% endif %}
+
+    <h4>
+        <a href="{{ post.url }}">
+            {{ post.data.title }}
+        </a>
+    </h4>
+
+    <p>{{ post.date | formatDate }}</p>
+    <p>{{ post.data.category }}</p>
+</article>
+{% endfor %}
+
+</div>
+</section>
+
+<aside class="sidebar">
+<div class="widget">
+<h4>Претрага</h4>
+<input type="search" placeholder="Претражи..." id="site-search">
+</div>
+
+<div class="widget">
+<h4>Категорије</h4>
+<ul>
+<li><a href="/posts/#grade1">1. разред</a></li>
+<li><a href="/posts/#grade2">2. разред</a></li>
+<li><a href="/posts/#grade3">3. разред</a></li>
+<li><a href="/posts/#grade4">4. разред</a></li>
+</ul>
+</div>
+
+<div class="widget about-mini">
+<h4>О мени</h4>
+<img loading="lazy" src="/assets/logo.svg" alt="Учитељица Бранка" class="about-pic">
+<p>Ја сам Бранка, учитељица која воли креативан приступ настави. Добродошли у мој школски свет!</p>
+</div>
+</aside>
+</main>
+
+
+</body>

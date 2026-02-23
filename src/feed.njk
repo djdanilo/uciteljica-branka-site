@@ -1,0 +1,23 @@
+---
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>Učiteljica Branka</title>
+<link>https://uciteljicabranka.rs/</link>
+<description>Materijali i ideje za 1–4 razred</description>
+
+{% for post in collections.posts | reverse %}
+<item>
+<title>{{ post.data.title }}</title>
+<link>https://uciteljicabranka.rs{{ post.url }}</link>
+<pubDate>{{ post.date }}</pubDate>
+<description><![CDATA[{{ post.templateContent | safe }}]]></description>
+</item>
+{% endfor %}
+
+</channel>
+</rss>

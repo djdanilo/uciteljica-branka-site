@@ -1,0 +1,46 @@
+---
+layout: layout.njk
+---
+
+{% set descriptionText = content | striptags | truncate(160) %}
+
+{% block head %}
+<meta name="description" content="{{ descriptionText }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ descriptionText }}">
+<meta property="og:type" content="article">
+{% if featured_image %}
+<meta property="og:image" content="{{ featured_image }}">
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "datePublished": "{{ date }}",
+  "author": {
+    "@type": "Person",
+    "name": "Učiteljica Branka"
+  }
+}
+</script>
+{% endblock %}
+
+<article class="post">
+
+<h1>{{ title }}</h1>
+
+<p class="post-meta">
+{{ date | formatDate }} • {{ category }}
+</p>
+
+{% if featured_image %}
+<img class="post-image" src="{{ featured_image }}" alt="{{ title }}">
+{% endif %}
+
+<div class="post-content">
+{{ content | safe }}
+</div>
+
+</article>

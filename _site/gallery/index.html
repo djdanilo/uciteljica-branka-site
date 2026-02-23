@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="sr">
+<head>
+<meta name="description" content="Galerija radova učenika učiteljice Branke.">
+<meta property="og:title" content="Galerija — Učiteljica Branka">
+<meta property="og:description" content="Radovi i aktivnosti iz učionice.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.ico">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Галерија — Учитељица Бранка</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="brand">
+<img loading="lazy" src="/assets/logo.svg" alt="Учитељица Бранка" class="logo">
+<div>
+<h1>Учитељица Бранка</h1>
+</div>
+</div>
+
+<nav class="main-nav">
+<a href="/">Почетна</a>
+<a href="/about/">О мени</a>
+<a href="/posts/">Материјали</a>
+<a href="/gallery/">Галерија</a>
+<a href="/contact/">Контакт</a>
+</nav>
+
+<button class="menu-toggle" aria-label="Отвори мени">☰</button>
+</div>
+</header>
+
+<main class="container content">
+<h2>Галерија радова</h2>
+
+<div class="gallery">
+<img loading="lazy" src="/assets/photo1.svg" alt="рад1">
+<img loading="lazy" src="/assets/photo2.svg" alt="рад2">
+<img loading="lazy" src="/assets/photo3.svg" alt="рад3">
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>Учитељица Бранка &copy; 2025</p>
+<p><a href="/privacy/">Политика приватности</a></p>
+</div>
+</footer>
+
+<script src="/js/main.js"></script>
+
+<script>
+document.querySelectorAll('nav a').forEach(link => {
+if(link.href === window.location.href){
+link.classList.add('active');
+}
+});
+</script>
+
+</body>
+</html>
