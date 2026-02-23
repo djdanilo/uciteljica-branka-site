@@ -2,19 +2,18 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "src/assets"
+public_folder: "/assets"
 
 collections:
   - name: "posts"
-    label: "Objave"
-    folder: "posts"
+    label: "Postovi"
+    folder: "src/posts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Naslov", name: "title", widget: "string" }
       - { label: "Datum", name: "date", widget: "datetime" }
-      - { label: "Kategorija", name: "category", widget: "select", options: ["I razred", "II razred", "III razred", "IV razred"] }
-      - { label: "Istaknuta slika", name: "featured_image", widget: "image" }
-      - { label: "Galerija", name: "gallery", widget: "list", field: {label: Slika, name: image, widget: image} }
+      - { label: "Kategorija", name: "category", widget: "string" }
+      - { label: "Slika", name: "featured_image", widget: "image", required: false }
       - { label: "Sadržaj", name: "body", widget: "markdown" }
