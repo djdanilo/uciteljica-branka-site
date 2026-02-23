@@ -1,10 +1,10 @@
 module.exports = function(eleventyConfig) {
 
   // Static folders
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
   // Posts collection
   eleventyConfig.addCollection("posts", function(collectionApi) {
