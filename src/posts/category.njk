@@ -1,20 +1,14 @@
 ---
 layout: layout.njk
-pagination:
-  data: collections.posts
-  size: 1
-  alias: current
-  addAllPagesToCollections: false
-permalink: "posts/{{ current.data.category }}/index.html"
 ---
 
-{% set categorySlug = current.data.category %}
+{% set currentCategory = page.fileSlug %}
 
-<h2>{{ categorySlug | categoryLabel }}</h2>
+<h2>{{ currentCategory | categoryLabel }}</h2>
 
 <div class="cards">
 {% for post in collections.posts %}
-  {% if post.data.category == categorySlug %}
+  {% if post.data.category == currentCategory %}
     <article class="card">
       {% if post.data.featured_image %}
         <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
@@ -25,7 +19,6 @@ permalink: "posts/{{ current.data.category }}/index.html"
       </h3>
 
       <p>{{ post.date | formatDate }}</p>
-      <p>{{ post.data.category | categoryLabel }}</p>
     </article>
   {% endif %}
 {% endfor %}

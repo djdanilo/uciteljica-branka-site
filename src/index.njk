@@ -32,7 +32,7 @@ description: "Идеје, материјали и ђачки радови за 1
     </h4>
 
     <p>{{ post.date | formatDate }}</p>
-    <p>{{ post.data.category }}</p>
+    <p>{{ post.data.category | categoryLabel }}</p>
 </article>
 {% endfor %}
 
