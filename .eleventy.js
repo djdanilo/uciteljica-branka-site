@@ -4,9 +4,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
 
   // STATIC ASSETS (pošto ti je input: "src")
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
-  eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "js": "js" });
+  eleventyConfig.addPassthroughCopy({ "css": "css" });
 
   // POSTS COLLECTION
   eleventyConfig.addCollection("posts", function(collectionApi) {
