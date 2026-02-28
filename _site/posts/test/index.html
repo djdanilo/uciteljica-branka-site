@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="eSCYRKEdigHPEC3qUJo64MIngrcmaFmxJYlI_vdpXA4" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <meta name="description" content="Zvanični sajt učiteljice Branke.">
 <meta property="og:title" content="Test objava">
@@ -17,6 +18,16 @@
 <link rel="canonical" href="https://uciteljicabranka.rs/posts/test/">
 
 </head>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user && window.location.hash.includes("invite_token")) {
+        window.netlifyIdentity.open("signup");
+      }
+    });
+  }
+</script>
 
 <body>
 
