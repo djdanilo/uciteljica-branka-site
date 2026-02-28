@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#fdf6f0"/>
-  <g>
-    <rect x="80" y="60" width="640" height="480" rx="16" fill="#fff" stroke="#ffd6b3"/>
-    <text x="400" y="320" font-size="26" text-anchor="middle" fill="#6c7a89">Игре и активности</text>
-  </g>
-</svg>
