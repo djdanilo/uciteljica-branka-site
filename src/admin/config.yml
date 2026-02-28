@@ -11,9 +11,23 @@ collections:
     folder: "src/posts"
     create: true
     slug: "{{slug}}"
+
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
+
       - { label: "Naslov", name: "title", widget: "string" }
+
       - { label: "Datum", name: "date", widget: "datetime" }
-      - { label: "Kategorija", name: "category", widget: "string" }
+
+      - label: "Razred"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "I razred", value: "i-razred" }
+          - { label: "II razred", value: "ii-razred" }
+          - { label: "III razred", value: "iii-razred" }
+          - { label: "IV razred", value: "iv-razred" }
+
       - { label: "Slika", name: "featured_image", widget: "image", required: false }
+
       - { label: "Sadržaj", name: "body", widget: "markdown" }
