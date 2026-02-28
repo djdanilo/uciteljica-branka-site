@@ -1,20 +1,36 @@
 module.exports = function(eleventyConfig) {
 
+  // ADMIN
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
-  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "js": "js" });
-  eleventyConfig.addPassthroughCopy({ "css": "css" });
 
+  // STATIC ASSETS (pošto ti je input: "src")
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
+  eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+
+  // POSTS COLLECTION
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md");
   });
 
+  // FORMAT DATE
   eleventyConfig.addFilter("formatDate", function(dateObj) {
     const date = new Date(dateObj);
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
     return `${day}.${month}.${year}.`;
+  });
+
+  // CATEGORY LABEL FILTER
+  eleventyConfig.addFilter("categoryLabel", function(value) {
+    const map = {
+      "i-razred": "I razred",
+      "ii-razred": "II razred",
+      "iii-razred": "III razred",
+      "iv-razred": "IV razred"
+    };
+    return map[value] || value;
   });
 
   return {
@@ -24,6 +40,4 @@ module.exports = function(eleventyConfig) {
       includes: "_includes"
     }
   };
-  
-  eleventyConfig.addPassthroughCopy({ "src/admin/decap-cms.js": "admin/decap-cms.js" });
 };

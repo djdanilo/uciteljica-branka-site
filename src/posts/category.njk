@@ -1,26 +1,32 @@
 ---
 layout: layout.njk
 pagination:
-  data: collections.categories
+  data: collections.posts
   size: 1
-  alias: categoryPosts
-permalink: "/posts/{{ pagination.items[0][0] | lower | replace(' ', '-') }}/"
+  alias: current
+  addAllPagesToCollections: false
+permalink: "posts/{{ current.data.category }}/index.html"
 ---
 
-{% set categoryName = pagination.items[0][0] %}
-{% set posts = pagination.items[0][1] %}
+{% set categorySlug = current.data.category %}
 
-<h2>{{ categoryName }}</h2>
+<h2>{{ categorySlug | categoryLabel }}</h2>
 
 <div class="cards">
-{% for post in posts %}
-<article class="card">
-  {% if post.data.featured_image %}
-  <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
-  {% endif %}
+{% for post in collections.posts %}
+  {% if post.data.category == categorySlug %}
+    <article class="card">
+      {% if post.data.featured_image %}
+        <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
+      {% endif %}
 
-  <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-  <p>{{ post.date | formatDate }}</p>
-</article>
+      <h3>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+
+      <p>{{ post.date | formatDate }}</p>
+      <p>{{ post.data.category | categoryLabel }}</p>
+    </article>
+  {% endif %}
 {% endfor %}
 </div>
